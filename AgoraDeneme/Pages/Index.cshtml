@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
+<div id="copyToClipBoard">
+    <input type="button" onclick="copyToClipboard()" class="btn btn-success" id="copy-btn" value="Copy your Conference Link!" />
+</div>
+<div id="videos">
+    <video class="video-player" id="user-1" autoplay playsinline></video>
+    <video class="video-player" id="user-2" autoplay playsinline></video>
+</div>
+<div id="controls">
+    <div class="control-container" id="camera-btn">
+        <img src="~/icons/camera.png" />
+    </div>
+
+    <div class="control-container" id="mic-btn">
+        <img src="~/icons/mic.png" />
+    </div>
+    <a href="lobby">
+    <div class="control-container" id="leave-btn">
+        <img src="~/icons/phone.png" />
+    </div>
+    </a>
+</div>
+
+   <script src="~/js/agora-rtm-sdk-1.5.1.js" asp-append-version="true"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>

@@ -1,0 +1,30 @@
+﻿@page
+@model AgoraDeneme.Pages.lobbyModel
+@{
+}
+<link rel="stylesheet" href="~/css/lobby.css" asp-append-version="true" />
+<main id="lobby-container">
+    <div id="form-container">
+        <div id="form__container__header">
+            <p>👋 Create or Join a Room</p>
+        </div>
+        <div id="form__content__wrapper">
+            <form id="join-form">
+    <input type="text" name="invite_link" required />
+    <input type="submit" value="Join Room" />
+
+</form>
+
+        </div>
+    </div>
+</main>
+
+<script>
+let form = document.getElementById('join-form');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    debugger;
+    let inviteCode = e.target.invite_link.value;
+    window.location = `index?room=${inviteCode}`;
+})
+</script>
